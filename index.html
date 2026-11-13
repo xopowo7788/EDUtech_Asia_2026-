@@ -6,335 +6,645 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EDUtech Asia 2026 | i-Scream media</title>
 <style>
-:root{--navy:#081b37;--blue:#2689d9;--light:#eaf5ff;--ink:#142d4d}
+:root{
+--navy:#07182f;--navy2:#102b4e;--navy3:#193b61;
+--blue:#58baff;--cyan:#7edbff;--white:#fff;
+--muted:#b7cce2;--ink:#19334f;--orange:#f05b32
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--navy);font-family:Arial,"Malgun Gothic",sans-serif;color:white}
-header{position:sticky;top:0;z-index:20;background:#06162ef2;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff25}
-header a{color:#d8eaff;text-decoration:none;font-size:13px}
-nav{display:flex;gap:13px;flex-wrap:wrap}
-section{padding:75px 6%;scroll-margin-top:65px}
-h1{font-size:clamp(42px,7vw,90px);margin:15px 0}
-h2{font-size:clamp(28px,4vw,48px);margin:0 0 25px}
-h3{color:#1677c6;margin:0 0 12px}
-p{line-height:1.75}
-small,.sub{color:#aac5e5}
-.hero{min-height:85vh;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(circle at 80% 20%,#174b78,transparent 50%),#081b37}
-.logo{max-width:560px;width:90%;background:white;padding:20px;border-radius:18px}
-.tag{color:#70d9ff;letter-spacing:2px;font-weight:bold}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy);color:white;font-family:Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+a{color:inherit;text-decoration:none}
+header{
+position:sticky;top:0;z-index:50;background:#06152bea;
+border-bottom:1px solid #ffffff25;padding:14px 4%;
+display:flex;justify-content:space-between;align-items:center;gap:15px
+}
+.brand{font-weight:800;letter-spacing:.3px}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+nav a{padding:9px 12px;border-radius:9px;color:#c6d8ec;font-size:13px}
+nav a:hover{background:#20466b;color:white}
+section{padding:75px 6%;scroll-margin-top:70px}
+.hero{
+min-height:88vh;display:flex;flex-direction:column;justify-content:center;
+background:radial-gradient(circle at 85% 25%,#23547b 0,transparent 43%),#07182f
+}
+.kicker{color:var(--cyan);font-weight:700;letter-spacing:2px;font-size:13px}
+h1{font-size:clamp(45px,7vw,94px);line-height:1.07;margin:20px 0}
+h2{font-size:clamp(30px,4vw,52px);margin:12px 0 25px}
+h3{margin:0 0 15px;font-size:21px}
+p{line-height:1.8}
+.muted{color:var(--muted)}
+.logo{
+max-width:550px;width:90%;background:white;padding:25px;
+border-radius:18px;display:block;margin:30px 0
+}
+.logo-fallback{
+background:white;color:#ee4d9b;border-radius:15px;padding:24px;
+font-size:clamp(25px,4vw,50px);font-weight:800;display:inline-block
+}
+.logo-fallback span{color:#5c0b6b}
+.gradient-line{height:5px;background:linear-gradient(90deg,#ef519a,#7543ad,#48b9ed);border-radius:10px}
+.section-cover{
+min-height:45vh;display:flex;flex-direction:column;justify-content:center;
+background:linear-gradient(130deg,#102b4e,#07182f);
+border-top:1px solid #ffffff18
+}
+.section-cover .number{font-size:80px;font-weight:900;color:#58baff}
+.section-cover h2{margin:0}
+.section-cover p{color:#b9cfe5;font-size:19px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-.card{background:#fff;color:var(--ink);border-radius:16px;padding:25px;box-shadow:0 10px 30px #0002}
-.card p{color:#425b75}
-.num{font-size:52px;color:#1379ca;font-weight:800}
-.tablewrap{overflow-x:auto;background:white;border-radius:14px}
-table{border-collapse:collapse;width:100%;color:#193450;min-width:650px}
-th,td{padding:15px;text-align:left;border-bottom:1px solid #dce6f1;vertical-align:top}
-th{background:#dceeff;color:#14538c}
-.bar{display:flex;align-items:center;gap:12px;margin:13px 0}
-.bar span{width:110px;font-size:14px}
-.track{flex:1;background:#dceaf6;border-radius:20px;overflow:hidden;height:19px}
-.fill{height:100%;background:linear-gradient(90deg,#1578c8,#57bce9)}
-.bar b{width:35px;text-align:right}
-.panel{background:#f0f7ff;color:#142d4d;border-radius:20px;padding:28px}
-.pill{display:inline-block;padding:8px 13px;background:#dcefff;border-radius:30px;color:#175c9a;margin:4px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px}
-.gallery img{width:100%;border-radius:14px;cursor:pointer}
-video{width:100%;border-radius:14px}
-footer{text-align:center;padding:60px;background:#06152b}
-@media(max-width:800px){header{position:relative;display:block}nav{margin-top:12px}section{padding:45px 5%}}
+.card{background:white;color:var(--ink);border-radius:17px;padding:25px;box-shadow:0 8px 25px #0002}
+.card h3{color:#146bb3}
+.card p{color:#435b74}
+.metric{font-size:clamp(40px,5vw,68px);font-weight:900;color:#147ac5}
+.panel{background:#f1f7fe;color:#173553;border-radius:18px;padding:28px;margin:20px 0}
+.panel h3{color:#176cb0}
+.panel p{color:#405a74}
+.pill{display:inline-block;background:#dcefff;color:#175d9d;padding:8px 13px;border-radius:30px;margin:4px;font-size:13px}
+.tablewrap{overflow:auto;background:white;border-radius:16px;margin:20px 0}
+table{border-collapse:collapse;width:100%;min-width:700px;color:#19334e}
+th,td{padding:15px;border-bottom:1px solid #e0e9f2;text-align:left;vertical-align:top;line-height:1.6}
+th{background:#dceeff;color:#15548a}
+tr:hover td{background:#f5faff}
+.bar{display:flex;align-items:center;gap:10px;margin:12px 0}
+.bar label{width:100px;font-size:13px;color:#284562}
+.track{flex:1;background:#dbeaf7;border-radius:20px;height:18px;overflow:hidden}
+.fill{height:100%;background:linear-gradient(90deg,#1479c8,#65c6ef)}
+.bar b{width:35px;text-align:right;color:#185c95}
+.toc{display:grid;gap:15px;max-width:1000px;margin:30px auto}
+.toc a{display:flex;align-items:center;gap:30px;background:#153456;padding:25px;border:1px solid #ffffff20;border-radius:15px;transition:.2s}
+.toc a:hover{transform:translateY(-3px);background:#20517d}
+.toc-number{font-size:38px;font-weight:900;color:#78caff}
+.toc strong{display:block;font-size:22px}
+.toc small{display:block;color:#b8cee5;margin-top:7px;line-height:1.5}
+.detail{background:white;color:#19334f;border-radius:15px;margin:15px 0;overflow:hidden}
+.detail summary{cursor:pointer;padding:22px 25px;font-size:19px;font-weight:800;list-style-position:inside}
+.detail summary:hover{background:#edf6ff}
+.detail-body{padding:0 28px 25px}
+.detail-body p,.detail-body li{line-height:1.8;color:#405b75}
+.detail-body h4{color:#156eaf;margin:20px 0 8px}
+.media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:15px}
+.media-grid img{width:100%;border-radius:12px;cursor:pointer;object-fit:cover}
+.media-grid video{width:100%;border-radius:12px}
+.empty{padding:35px;border:1px dashed #6b91b7;border-radius:15px;color:#bad0e5}
+footer{text-align:center;padding:75px 20px;background:#061326}
+.note{font-size:13px;color:#a9c3dd}
+@media(max-width:750px){
+header{display:block;position:relative}
+nav{margin-top:12px}
+section{padding:50px 5%}
+.toc a{gap:15px;padding:18px}
+.toc strong{font-size:18px}
+.section-cover .number{font-size:55px}
+}
 </style>
 </head>
 <body>
+
 <header>
-<strong>i-Scream media · Global Business</strong>
+<div class="brand">i-Scream media <span style="color:#68caff">GLOBAL</span></div>
 <nav>
-<a href="#results">성과</a>
-<a href="#leads">리드 분석</a>
-<a href="#companies">참가기업</a>
-<a href="#meetings">기관 방문</a>
-<a href="#actions">후속 계획</a>
-<a href="#media">사진·영상</a>
+<a href="#contents">목차</a>
+<a href="#section1">01 전시 성과</a>
+<a href="#section2">02 업체 인사이트</a>
+<a href="#section3">03 주요 미팅</a>
+<a href="#section4">04 APPENDIX</a>
 </nav>
 </header>
 
-<section class="hero">
-<div class="tag">GLOBAL EXHIBITION REPORT · 2026</div>
-<div style="margin:35px 0">
-<img class="logo" id="officialLogo" alt="EDUtech Asia">
+<section class="hero" id="home">
+<div class="kicker">GLOBAL EXHIBITION REPORT · NOVEMBER 2026</div>
+<div id="logoArea">
+<img class="logo" src="assets/edutech-logo.png" alt="EDUtech Asia 로고"
+onerror="this.style.display='none';document.getElementById('fallbackLogo').style.display='inline-block'">
+<div class="logo-fallback" id="fallbackLogo" style="display:none">EDU<span>tech</span> ASIA</div>
 </div>
-<h1>EDUtech Asia <span style="color:#75d5ff">2026</span></h1>
+<h1>EDUtech Asia <span style="color:#78caff">2026</span></h1>
 <h2 style="font-size:26px;font-weight:400">전시회 참가 결과 및 싱가포르 기관 방문 보고서</h2>
-<p class="sub">Singapore Sands Expo · 2026.11.4–5</p>
-<p>아이스크림미디어 해외사업실 | 2026.11.13</p>
+<p class="muted">Singapore · Sands Expo · 2026.11.4–5</p>
+<p>아이스크림미디어 해외사업실</p>
+<div class="gradient-line" style="max-width:550px;margin-top:25px"></div>
 </section>
 
-<section id="results">
-<div class="tag">01 · EXHIBITION PERFORMANCE</div>
-<h2>전시회 참가 성과</h2>
-<div class="grid">
-<div class="card"><div class="num">572</div><p>고유 연락처</p></div>
-<div class="card"><div class="num">414</div><p>기관 수</p></div>
-<div class="card"><div class="num">24</div><p>해외 국가</p></div>
-<div class="card"><div class="num">94%</div><p>배지 스캔 비중</p></div>
-</div>
-<br>
-<div class="panel">
-<h3>행사 개요</h3>
-<p>장소: 싱가포르 Sands Expo</p>
-<p>일정: 2026년 11월 4~5일</p>
-<p>운영 인력: 7명 (미디어 5명, 아트 2명)</p>
-<p>전시 제품: Kinderboard, LumiTeach, ART BONBON, TRUETRUE</p>
-<p>리드: 사전 23건 / 11월 4일 268건 / 11월 5일 281건</p>
-<p>운영 이벤트: Pick Your Favorite, Passport Challenge, 기념품 증정</p>
+<section id="contents">
+<div class="kicker">REPORT OVERVIEW</div>
+<h2>CONTENTS</h2>
+<div class="toc">
+<a href="#section1"><span class="toc-number">01</span><div><strong>전시회 개요 및 성과</strong><small>리드 수집 실적, 국가·산업·직무별 분석, 후속 계획, 현장 운영</small></div></a>
+<a href="#section2"><span class="toc-number">02</span><div><strong>현장 업체 참관 인사이트</strong><small>3대 Key Takeaways, 주요 업체 사례, 학교 진입 모델 및 동남아 LMS 분석</small></div></a>
+<a href="#section3"><span class="toc-number">03</span><div><strong>싱가포르 주요 미팅</strong><small>ECDA · Skool4Kidz · Kinderland · Hanbridge Institute 미팅 결과 및 후속 액션</small></div></a>
+<a href="#section4"><span class="toc-number">04</span><div><strong>APPENDIX</strong><small>현장 스케치, 제품별 Core 고객 리스트, 사진 및 동영상</small></div></a>
 </div>
 </section>
 
-<section id="leads">
-<div class="tag">02 · LEAD ANALYTICS</div>
-<h2>국가별 리드 분석</h2>
+<section class="section-cover" id="section1">
+<div class="number">01</div>
+<h2>전시회 개요 및 성과</h2>
+<p>Exhibition Overview & Performance</p>
+</section>
+
+<section>
+<div class="kicker">01-1 · EXHIBITION OVERVIEW</div>
+<h2>전시회 개요</h2>
 <div class="grid">
-<div class="card">
-<h3>국가별 리드</h3>
-<div id="countries"></div>
+<div class="card"><h3>행사명</h3><p>EDUtech Asia 2026</p></div>
+<div class="card"><h3>일정 및 장소</h3><p>2026년 11월 4~5일<br>Singapore Sands Expo</p></div>
+<div class="card"><h3>전시 제품</h3><p>Kinderboard<br>LumiTeach<br>ART BONBON<br>TRUETRUE</p></div>
+<div class="card"><h3>운영 인력</h3><p>총 7명<br>아이스크림미디어 5명<br>아이스크림아트 2명</p></div>
 </div>
-<div class="card">
-<h3>시장별 핵심 인사이트</h3>
-<div class="num">88%</div>
-<p>해외 리드 중 동남아시아 집중</p>
-<p>싱가포르 243건, 말레이시아 124건</p>
-<p>인도네시아 43건, 필리핀 39건</p>
-<p>인도네시아는 K-12 학교 직접 접근 유효</p>
-</div>
-</div>
-<br>
+</section>
+
+<section>
+<div class="kicker">01-2 · PERFORMANCE</div>
+<h2>전시회 핵심 성과</h2>
 <div class="grid">
-<div class="card"><h3>직무별 리드</h3><div id="jobs"></div></div>
-<div class="card"><h3>산업별 리드</h3><div id="industries"></div></div>
+<div class="card"><div class="metric">572</div><p>고유 연락처</p></div>
+<div class="card"><div class="metric">414</div><p>기관 수</p></div>
+<div class="card"><div class="metric">24</div><p>국가</p></div>
+<div class="card"><div class="metric">94%</div><p>배지 스캔 비중</p></div>
 </div>
-<br>
 <div class="panel">
-<h3>영업 우선순위</h3>
+<h3>일자별 리드 수집</h3>
+<p>사전 확보: 23건</p>
+<p>11월 4일: 268건</p>
+<p>11월 5일: 281건</p>
+<p><b>총 572건</b></p>
+</div>
+</section>
+
+<section>
+<div class="kicker">01-3 · LEAD ANALYSIS</div>
+<h2>국가·직무·산업별 리드 분석</h2>
+<div class="grid">
+<div class="card"><h3>국가별 리드</h3><div id="countryChart"></div></div>
+<div class="card"><h3>직무별 리드</h3><div id="jobChart"></div></div>
+<div class="card"><h3>산업별 리드</h3><div id="industryChart"></div></div>
+</div>
+<div class="panel">
+<h3>주요 영업 인사이트</h3>
+<span class="pill">동남아 해외 리드 약 88%</span>
 <span class="pill">의사결정 직군 141명</span>
-<span class="pill">파트너 후보 127건</span>
+<span class="pill">에듀테크·유통 파트너 후보 127건</span>
 <span class="pill">학교·유아교육 158건</span>
-<p>경영진 및 교육 책임자, 유통·에듀테크 파트너 후보를 우선 접촉하고, 국가별 특성에 따라 학교 직접 영업과 파트너 영업을 구분합니다.</p>
+<p>싱가포르와 말레이시아를 중심으로 기존 교육기관과 유통 파트너를 발굴하고, 인도네시아와 필리핀은 성장 가능 시장으로 구분하여 후속 영업을 추진합니다.</p>
 </div>
 </section>
 
-<section id="insights">
-<div class="tag">03 · MARKET INTELLIGENCE</div>
-<h2>현장 참관 3대 인사이트</h2>
+<section>
+<div class="kicker">01-4 · EXHIBITION OPERATIONS</div>
+<h2>현장 부스 운영</h2>
+<div class="grid">
+<div class="card"><h3>제품별 전시</h3><p>Kinderboard, LumiTeach, ART BONBON, TRUETRUE 체험 및 시연</p></div>
+<div class="card"><h3>참여형 이벤트</h3><p>Pick Your Favorite 투표<br>Passport Challenge</p></div>
+<div class="card"><h3>기념품</h3><p>요술 바구니, 전통 부채, 주요 고객용 여행 어댑터</p></div>
+<div class="card"><h3>디지털 안내</h3><p>Linktree QR 기반 제품별 소개 및 후속 연결</p></div>
+</div>
+</section>
+
+<section>
+<div class="kicker">01-5 · FOLLOW-UP PLAN</div>
+<h2>리드 후속 영업 계획</h2>
+<div class="grid">
+<div class="card"><h3>1단계 · 리드 정리</h3><p>HubSpot 등록 및 기업·담당자 매핑, 제품 관심도와 국가별 분류</p></div>
+<div class="card"><h3>2단계 · 후속 접촉</h3><p>Thank-you 메일 발송, Core 고객 우선 연락, 미팅 일정 확정</p></div>
+<div class="card"><h3>3단계 · 성과 분석</h3><p>메일 회신율, SQL 전환율, 제품별 파이프라인 분석</p></div>
+</div>
+</section>
+
+<section class="section-cover" id="section2">
+<div class="number">02</div>
+<h2>현장 업체 참관 인사이트</h2>
+<p>Exhibitor Benchmarking & Market Intelligence</p>
+</section>
+
+<section>
+<div class="kicker">02-1 · KEY TAKEAWAYS</div>
+<h2>3대 핵심 인사이트</h2>
 <div class="grid">
 <div class="card">
-<h3>01. AI Learning Journey</h3>
-<p>교사 페르소나에 맞춘 직접 체험과 실습 중심 온보딩.</p>
-<p>대표 사례: Google for Education</p>
+<h3>01 · AI Learning Journey</h3>
+<p>AI 기능을 단순히 설명하기보다 교사가 직접 체험하고 수업에 적용하도록 설계한 온보딩 구조</p>
+<p><b>사례:</b> Google for Education</p>
 </div>
 <div class="card">
-<h3>02. Human-AI Literacy</h3>
+<h3>02 · Human-AI Literacy</h3>
 <p>Think → Create → Reflect</p>
-<p>AI 답변을 비판적으로 검증하고 학습자의 주도성을 강화.</p>
-<p>대표 사례: LEXGO Academy</p>
+<p>AI의 결과를 그대로 받아들이기보다 비판적 사고와 창의적 활용을 강조</p>
+<p><b>사례:</b> LEXGO Academy</p>
 </div>
 <div class="card">
-<h3>03. Teacher Experience</h3>
-<p>최저 허들 체험 → 미션·배지 → 앰배서더 → 1:1 연수.</p>
-<p>교사의 실제 수업 도입과 지속 사용을 지원.</p>
+<h3>03 · Teacher Experience</h3>
+<p>체험 → 미션·배지 → 앰배서더 → 1:1 연수</p>
+<p>교사 중심 제품 확산 및 학교 단위 도입 구조</p>
+<p><b>사례:</b> MagicSchool AI, Toddle</p>
 </div>
 </div>
 </section>
 
-<section id="companies">
-<div class="tag">04 · EXHIBITOR & COMPETITOR ANALYSIS</div>
-<h2>주요 참가기업 및 경쟁사 분석</h2>
+<section>
+<div class="kicker">02-2 · EXHIBITOR ANALYSIS</div>
+<h2>주요 참가기업 분석</h2>
+<p class="muted">기업명을 클릭하면 상세 분석이 펼쳐집니다.</p>
+<div id="companyDetails"></div>
+</section>
+
+<section>
+<div class="kicker">02-3 · GO-TO-MARKET</div>
+<h2>학교 시장 진입 모델 비교</h2>
+<div class="grid">
+<div class="card"><h3>교사 주도 확산형</h3><p>MagicSchool AI · Wayground</p><p>개별 교사 체험을 시작으로 학교·교육청 라이선스로 확대</p></div>
+<div class="card"><h3>하드웨어 결합형</h3><p>ClassIn · Samsung Knox</p><p>스마트 교실, 디바이스 관리 및 교육 플랫폼 패키지</p></div>
+<div class="card"><h3>기관 라이선스형</h3><p>Kahoot! · Canvas · D2L</p><p>학교 단위 계약, AI 부가 기능 및 기관별 관리 기능</p></div>
+<div class="card"><h3>교육과정 특화형</h3><p>Toddle · LEXGO</p><p>IB 및 AI 리터러시 교육과정 중심 차별화</p></div>
+</div>
+</section>
+
+<section>
+<div class="kicker">02-4 · LMS & AI STRATEGY</div>
+<h2>동남아 LMS 및 AI 경쟁 전략</h2>
 <div class="tablewrap">
 <table>
-<thead><tr><th>기업</th><th>주요 솔루션</th><th>시사점</th></tr></thead>
+<thead><tr><th>기업</th><th>AI 전략</th><th>주요 시사점</th></tr></thead>
 <tbody>
-<tr><td>Google for Education</td><td>Gemini, Classroom, 교사 AI 연수</td><td>범용 AI보다 교과 콘텐츠·교육과정 정렬 차별화</td></tr>
-<tr><td>LEXGO Academy</td><td>LexBuild, LexStory, AI Literacy</td><td>Think-Create-Reflect 수업 방법론</td></tr>
-<tr><td>MagicSchool AI</td><td>교사용 AI 도구 80여 종</td><td>무료 교사 체험에서 기관 계약 전환</td></tr>
-<tr><td>Toddle</td><td>IB 특화 LMS</td><td>1:1 교사 연수와 학교 단위 판매</td></tr>
-<tr><td>Wayground</td><td>AI 퀴즈·서술형 평가</td><td>평가와 수업 운영의 즉각적 효용</td></tr>
-<tr><td>Codnut</td><td>PPT/PDF 기반 인터랙티브 수업 변환</td><td>기존 교안 재활용 및 발행사 협력</td></tr>
-<tr><td>Sort My Prep</td><td>AI 시험지 생성·채점</td><td>교사 검수형 B2B 포지셔닝</td></tr>
-<tr><td>ClassIn</td><td>ClassInX 스마트 보드·LMS</td><td>하드웨어와 플랫폼 패키지 판매</td></tr>
-<tr><td>Samsung Knox</td><td>기기 관리·Knox Classroom</td><td>하드웨어 제조사와 콘텐츠 협력</td></tr>
-<tr><td>Kahoot!</td><td>AI 퀴즈·형성평가</td><td>기능별 AI 요금제와 기관 라이선스</td></tr>
-<tr><td>Canvas</td><td>IgniteAI Agent</td><td>AI 데이터 처리 고지와 기관별 통제</td></tr>
-<tr><td>D2L Brightspace</td><td>Lumi Remix·Learner Mode</td><td>콘텐츠 표준 연동 및 AI 부가 과금</td></tr>
-<tr><td>Moodle</td><td>AI 모델 선택형 LMS</td><td>로컬 LLM과 데이터 주권 대응</td></tr>
-<tr><td>Meritto</td><td>입학·모집 CRM</td><td>WhatsApp 연계 및 상담 자동화</td></tr>
-<tr><td>Jamf</td><td>Apple 기기 관리·보안</td><td>교내 기기 통제와 학생 보호</td></tr>
+<tr><td>Canvas</td><td>IgniteAI Agent</td><td>기관별 데이터 통제 및 AI 활용 정책</td></tr>
+<tr><td>D2L</td><td>Lumi Remix · Learner Mode</td><td>기존 LMS 연동 및 AI 부가 과금</td></tr>
+<tr><td>Moodle</td><td>모델 선택형 AI</td><td>로컬 LLM, 데이터 주권, 유연한 모델 운영</td></tr>
+<tr><td>Kahoot!</td><td>AI 퀴즈·평가</td><td>교사 생산성 중심 기능과 기관 라이선스</td></tr>
 </tbody>
 </table>
 </div>
-<br>
 <div class="panel">
-<h3>시장 진입 모델</h3>
-<p><b>하드웨어 탑재형:</b> ClassIn, Samsung Knox</p>
-<p><b>기관 라이선스형:</b> Kahoot!, Canvas, D2L</p>
-<p><b>교사 주도 확산형:</b> MagicSchool AI, Wayground</p>
-<p><b>자사 적용 방향:</b> 교사 온보딩, 교육과정 현지화, AI 데이터 정책, LMS 연동을 핵심 경쟁력으로 구축</p>
+<h3>아이스크림미디어 적용 방향</h3>
+<p>교육과정 현지화, 교사 온보딩, AI 데이터 처리 정책, LMS 연동, 제품별 학교 도입 시나리오를 핵심 경쟁력으로 강화합니다.</p>
 </div>
 </section>
 
-<section id="meetings">
-<div class="tag">05 · SINGAPORE INSTITUTIONAL MEETINGS</div>
-<h2>싱가포르 주요 기관 방문</h2>
+<section class="section-cover" id="section3">
+<div class="number">03</div>
+<h2>싱가포르 주요 미팅</h2>
+<p>Institutional Meetings & Business Opportunities</p>
+</section>
+
+<section>
+<div class="kicker">03-1 · ECDA</div>
+<h2>ECDA 미팅 결과</h2>
+<div class="panel">
+<h3>Early Childhood Development Agency</h3>
+<p>싱가포르 영유아 교육 관련 정책·관리 기관</p>
+</div>
 <div class="grid">
-<div class="card">
-<h3>01 · ECDA</h3>
-<p><b>기관:</b> Early Childhood Development Agency</p>
-<p><b>구매 구조:</b> ECDA는 직접 구매하지 않고 유치원 운영사가 도입 결정</p>
-<p><b>지원금:</b> IMDA 기술 승인 후 관련 지원금 30~50% 연계 가능성 논의</p>
-<p><b>전략:</b> 5개 Anchor Operator 직접 공략</p>
-<p><b>후속:</b> 감사 메일, IMDA 요건 확인, 운영사별 제안 준비</p>
-</div>
-<div class="card">
-<h3>02 · Skool4Kidz</h3>
-<p><b>기관:</b> ECDA Anchor Operator, 32개 센터·약 6,000명</p>
-<p><b>TRUETRUE:</b> MOQ 100대, 워런티·공급 조건 문의</p>
-<p><b>Kinderboard:</b> 수업계획·포트폴리오 활용 관심</p>
-<p><b>전략:</b> 로봇 선진입 후 플랫폼 확장</p>
-<p><b>후속:</b> 샘플 피드백, 가격·보증 조건, 온라인 미팅</p>
-</div>
-<div class="card">
-<h3>03 · Kinderland</h3>
-<p><b>기관:</b> 아시아 120개 이상 센터 운영 유아교육 그룹</p>
-<p><b>TRUETRUE:</b> 센터장 Melissa Ang에게 샘플 전달</p>
-<p><b>Kinderboard:</b> 그룹 차원의 도입 관심 확인</p>
-<p><b>전략:</b> 단일 센터 시범 운영 후 그룹 확산</p>
-<p><b>후속:</b> 샘플 피드백, 파일럿 범위·기간·KPI 제안</p>
-</div>
-<div class="card">
-<h3>04 · Hanbridge Institute</h3>
-<p><b>기관:</b> 싱가포르 사립 교육기관</p>
-<p><b>LumiTeach:</b> 교사 준비 시간 절감 및 어휘 테스트 호평</p>
-<p><b>PoC:</b> Hanbridge 자체 교재 기반 시범 운영 추진</p>
-<p><b>ART BONBON:</b> 부가 교육 프로그램 검토</p>
-<p><b>후속:</b> PoC 일정 조율, 체험 계정, 프로그램 제안</p>
-</div>
+<div class="card"><h3>구매 구조</h3><p>ECDA가 직접 제품을 구매하기보다 유치원 운영사가 도입을 결정하는 구조</p></div>
+<div class="card"><h3>정부 지원 연계</h3><p>IMDA 기술 승인 및 지원금 연계 가능성 검토. 지원 조건과 비율은 별도 확인 필요</p></div>
+<div class="card"><h3>시장 진입 전략</h3><p>Anchor Operator 5개 기관을 중심으로 직접 제안 및 파트너십 추진</p></div>
+<div class="card"><h3>후속 액션</h3><p>감사 메일 발송, IMDA 요건 확인, 주요 운영사별 제품 제안</p></div>
 </div>
 </section>
 
-<section id="operations">
-<div class="tag">06 · BOOTH OPERATIONS</div>
-<h2>부스 운영 및 현장 마케팅</h2>
+<section>
+<div class="kicker">03-2 · SKOOL4KIDZ</div>
+<h2>Skool4Kidz 미팅 결과</h2>
+<div class="panel">
+<h3>기관 개요</h3>
+<p>싱가포르 ECDA Anchor Operator. 약 32개 센터, 약 6,000명 규모</p>
+</div>
 <div class="grid">
-<div class="card"><h3>브랜드 부스</h3><p>i-Scream media 통합 부스 및 제품별 홍보 배너 운영</p></div>
-<div class="card"><h3>참여형 이벤트</h3><p>Pick Your Favorite 투표, Passport Challenge</p></div>
-<div class="card"><h3>기념품</h3><p>요술 바구니, 전통 부채, 핵심 고객용 여행 어댑터</p></div>
-<div class="card"><h3>디지털 안내</h3><p>Linktree QR을 통해 제품별 소개 페이지 연결</p></div>
+<div class="card"><h3>TRUETRUE</h3><p>MOQ 100대, 공급 조건 및 워런티에 대한 관심과 문의</p></div>
+<div class="card"><h3>Kinderboard</h3><p>수업계획 및 포트폴리오 활용 가능성 검토</p></div>
+<div class="card"><h3>사업 기회</h3><p>교육용 로봇 선진입 후 플랫폼 확장 가능성</p></div>
+<div class="card"><h3>후속 액션</h3><p>샘플 피드백, 가격·보증 조건, 온라인 미팅 조율</p></div>
 </div>
 </section>
 
-<section id="actions">
-<div class="tag">07 · BUSINESS FOLLOW-UP</div>
-<h2>후속 영업 실행 계획</h2>
+<section>
+<div class="kicker">03-3 · KINDERLAND</div>
+<h2>Kinderland 미팅 결과</h2>
+<div class="panel">
+<h3>기관 개요</h3>
+<p>아시아 지역 120개 이상 센터를 운영하는 유아교육 그룹</p>
+</div>
 <div class="grid">
-<div class="card">
-<h3>11월</h3>
-<p>HubSpot 리드 등록</p>
-<p>Thank-you 메일 발송</p>
-<p>제품별 Core 고객 우선 접촉</p>
-</div>
-<div class="card">
-<h3>12월</h3>
-<p>메일 회신율 측정</p>
-<p>SQL 전환율 분석</p>
-<p>리드 등급 부여 및 정보 보완</p>
-</div>
-<div class="card">
-<h3>기관별 추진</h3>
-<p>Skool4Kidz: 공급 조건 협의</p>
-<p>Kinderland: 시범 운영 제안</p>
-<p>Hanbridge: LumiTeach PoC</p>
-<p>ECDA: 지원금·기술 승인 검토</p>
-</div>
+<div class="card"><h3>샘플 전달</h3><p>TRUETRUE 샘플을 센터장 Melissa Ang에게 전달</p></div>
+<div class="card"><h3>제품 관심</h3><p>TRUETRUE 및 Kinderboard의 교육 현장 활용 가능성 논의</p></div>
+<div class="card"><h3>도입 전략</h3><p>단일 센터 시범 운영 후 그룹 내 확산 모델 검토</p></div>
+<div class="card"><h3>후속 액션</h3><p>샘플 피드백 확인, 파일럿 범위·기간·KPI 제안</p></div>
 </div>
 </section>
 
-<section id="media">
-<div class="tag">08 · EXHIBITION MEDIA</div>
-<h2>현장 사진 및 동영상</h2>
-<p class="sub">GitHub에 assets 폴더를 만들고 파일을 업로드한 후 아래 파일명 목록을 수정하면 표시됩니다.</p>
-<h3 style="color:#83d6ff">Photo Gallery</h3>
-<div class="gallery" id="photoGallery"></div>
-<p id="photoHelp" class="sub"></p>
-<br>
-<h3 style="color:#83d6ff">Video Showcase</h3>
-<div class="grid" id="videoGallery"></div>
-<p id="videoHelp" class="sub"></p>
+<section>
+<div class="kicker">03-4 · HANBRIDGE INSTITUTE</div>
+<h2>Hanbridge Institute 미팅 결과</h2>
+<div class="panel">
+<h3>기관 개요</h3>
+<p>싱가포르 사립 교육기관</p>
+</div>
+<div class="grid">
+<div class="card"><h3>LumiTeach</h3><p>교사 수업 준비 시간 절감 및 어휘 테스트 기능에 대한 긍정적 반응</p></div>
+<div class="card"><h3>PoC 추진</h3><p>Hanbridge 자체 교재를 활용한 시범 운영 검토</p></div>
+<div class="card"><h3>ART BONBON</h3><p>부가 교육 프로그램으로 활용 가능성 검토</p></div>
+<div class="card"><h3>후속 액션</h3><p>PoC 일정, 체험 계정, 교육 프로그램 제안 조율</p></div>
+</div>
+</section>
+
+<section>
+<div class="kicker">03-5 · ACTION TRACKER</div>
+<h2>기관별 후속 실행 현황</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>기관</th><th>핵심 제품</th><th>후속 과제</th><th>확인 사항</th></tr></thead>
+<tbody>
+<tr><td>ECDA</td><td>Kinderboard · TRUETRUE</td><td>IMDA 및 운영사 접근</td><td>지원 조건 확인</td></tr>
+<tr><td>Skool4Kidz</td><td>TRUETRUE · Kinderboard</td><td>가격·워런티 제안</td><td>샘플 피드백</td></tr>
+<tr><td>Kinderland</td><td>TRUETRUE · Kinderboard</td><td>센터 파일럿 제안</td><td>운영 범위·KPI</td></tr>
+<tr><td>Hanbridge</td><td>LumiTeach · ART BONBON</td><td>자체 교재 PoC</td><td>일정·계정 확정</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="section-cover" id="section4">
+<div class="number">04</div>
+<h2>APPENDIX</h2>
+<p>Field Gallery · Core Accounts · Media Library</p>
+</section>
+
+<section>
+<div class="kicker">APPENDIX A · FIELD SKETCH</div>
+<h2>전시회 현장 스케치</h2>
+<div class="media-grid" id="photoGallery"></div>
+<div class="empty" id="photoEmpty">현장 사진 업로드 대기 중입니다.</div>
+</section>
+
+<section>
+<div class="kicker">APPENDIX B · CORE ACCOUNTS</div>
+<h2>제품별 Core 고객 리스트</h2>
+<div class="grid">
+<div class="card"><h3>Kinderboard</h3><p>유치원 운영사 및 유아교육 기관 중심</p><div id="coreKinder"></div></div>
+<div class="card"><h3>LumiTeach</h3><p>학교·교육기관 및 자체 교재 보유 기관 중심</p><div id="coreLumi"></div></div>
+<div class="card"><h3>TRUETRUE</h3><p>유아교육 운영사 및 교육용 로봇 유통 파트너 중심</p><div id="coreTrue"></div></div>
+<div class="card"><h3>ART BONBON</h3><p>미술교육 및 방과후 프로그램 운영 기관 중심</p><div id="coreArt"></div></div>
+</div>
+<p class="note">전체 Core 고객 명단은 원본 자료를 확인한 후 아래 데이터 배열에 추가할 수 있습니다.</p>
+</section>
+
+<section>
+<div class="kicker">APPENDIX C · VIDEO LIBRARY</div>
+<h2>전시회 동영상</h2>
+<div class="media-grid" id="videoGallery"></div>
+<div class="empty" id="videoEmpty">영상 업로드 대기 중입니다.</div>
 </section>
 
 <footer>
+<div class="kicker">i-Scream media · GLOBAL BUSINESS</div>
 <h2>Thank You.</h2>
-<p>EDUtech Asia 2026</p>
-<p>i-Scream media · Global Business</p>
+<p class="muted">EDUtech Asia 2026</p>
+<a href="#home" style="color:#83d5ff">↑ 맨 위로 돌아가기</a>
 </footer>
 
 <script>
-// 공식 로고: 이미지를 GitHub assets 폴더에 추가하세요.
-document.getElementById("officialLogo").src="assets/edutech-logo.png";
-document.getElementById("officialLogo").onerror=function(){
-this.style.display="none";
-this.parentElement.innerHTML='<div style="font-size:45px;font-weight:bold;color:#f24b9c">EDUtech <span style="color:#670d73">ASIA</span></div>';
-};
-
-// 리드 데이터
-const country=[
+// 리드 분석
+const countryData=[
 ["싱가포르",243],["말레이시아",124],
 ["인도네시아",43],["필리핀",39],
 ["인도",17],["베트남",13],
 ["홍콩",10],["중국",9],["태국",8]
 ];
-const jobs=[
+const jobData=[
 ["교사·강사",100],["경영진",58],
 ["교육 책임자",54],["학생",35],
 ["행정·운영",30],["영업·BD",26],
 ["컨설턴트",26],["IT·기술",21],
 ["마케팅",15],["정부·공공",9]
 ];
-const industries=[
+const industryData=[
 ["K-12 학교",132],["에듀테크",94],
 ["대학",67],["정부·공공",53],
 ["유통·컨설팅",33],["직업교육",33],
 ["학원·센터",27],["학생",27],
 ["유아교육",26]
 ];
-function chart(id,data){
-let max=Math.max(...data.map(d=>d[1]));
-document.getElementById(id).innerHTML=data.map(d=>`
+
+function makeChart(id,data){
+const max=Math.max(...data.map(x=>x[1]));
+document.getElementById(id).innerHTML=data.map(([name,value])=>`
 <div class="bar">
-<span>${d[0]}</span>
-<div class="track"><div class="fill" style="width:${d[1]/max*100}%"></div></div>
-<b>${d[1]}</b>
+<label>${name}</label>
+<div class="track"><div class="fill" style="width:${value/max*100}%"></div></div>
+<b>${value}</b>
 </div>`).join("");
 }
-chart("countries",country);
-chart("jobs",jobs);
-chart("industries",industries);
+makeChart("countryChart",countryData);
+makeChart("jobChart",jobData);
+makeChart("industryChart",industryData);
 
-// 사진 추가 예시: "assets/booth1.jpg"
+// 참가기업별 상세 내용
+const companies=[
+{
+name:"Google for Education",
+product:"Gemini · Google Classroom · AI Teacher Training",
+points:[
+"교사별 AI 활용 여정과 실습 중심 온보딩",
+"교육 현장에서 직접 체험하고 적용하는 구조",
+"교사 역량 강화와 수업 활용 시나리오 중심"
+],
+lesson:"LumiTeach의 교사 온보딩 및 실제 수업 적용 가이드 강화"
+},
+{
+name:"LEXGO Academy",
+product:"LexBuild · LexStory · AI Literacy",
+points:[
+"Think → Create → Reflect 학습 방법론",
+"AI 결과에 대한 비판적 사고 강조",
+"AI 리터러시와 학습자 주도성 강화"
+],
+lesson:"AI 기능뿐 아니라 교육 방법론과 학습 성과를 함께 제시"
+},
+{
+name:"MagicSchool AI",
+product:"교사용 AI 도구",
+points:[
+"개별 교사 무료 체험 기반 확산",
+"교사 생산성 개선에 집중",
+"학교 및 교육청 단위 라이선스 전환"
+],
+lesson:"교사 개인 체험에서 기관 계약으로 이어지는 전환 구조 검토"
+},
+{
+name:"Toddle",
+product:"IB 교육과정 특화 LMS",
+points:[
+"IB 교육과정 정렬",
+"교사 대상 1:1 연수",
+"학교 단위 도입과 지속 사용 지원"
+],
+lesson:"현지 교육과정에 맞춘 솔루션 제안과 연수 패키지 강화"
+},
+{
+name:"Wayground",
+product:"AI 퀴즈 · 형성평가",
+points:[
+"교사 주도 콘텐츠 생성",
+"학습 참여 및 평가 기능",
+"교사 체험을 통한 학교 확산"
+],
+lesson:"즉각적으로 활용 가능한 수업·평가 기능 강화"
+},
+{
+name:"Codnut",
+product:"PPT/PDF 기반 인터랙티브 수업",
+points:[
+"기존 교안의 디지털 변환",
+"인터랙티브 수업 자료 생성",
+"교재·콘텐츠 발행사 협력 가능성"
+],
+lesson:"기존 교육자료를 재활용하는 워크플로우 강화"
+},
+{
+name:"Sort My Prep",
+product:"AI 시험지 생성 · 채점",
+points:[
+"시험지 생성 및 평가 업무 자동화",
+"교사 검수 기반 품질 관리",
+"교사 생산성 개선"
+],
+lesson:"AI 생성 결과의 검수와 편집 기능 중요"
+},
+{
+name:"ClassIn",
+product:"ClassInX · 스마트 교실 · LMS",
+points:[
+"하드웨어와 교육 플랫폼 결합",
+"스마트 교실 도입 모델",
+"학교 단위 통합 솔루션"
+],
+lesson:"Kinderboard 및 교육용 하드웨어 패키지 전략 검토"
+},
+{
+name:"Samsung Knox",
+product:"기기 관리 · Knox Classroom",
+points:[
+"학교 디바이스 관리",
+"교육 현장 보안 및 접근 제어",
+"하드웨어 생태계 기반 확장"
+],
+lesson:"기기 제조사 및 유통 파트너 협력 가능성 검토"
+},
+{
+name:"Kahoot!",
+product:"AI 퀴즈 · 평가",
+points:[
+"게임 기반 학습",
+"AI 콘텐츠 생성 기능",
+"기관 라이선스 및 기능별 과금"
+],
+lesson:"AI 기능의 실제 교사 효용과 과금 구조 비교"
+},
+{
+name:"Canvas",
+product:"IgniteAI Agent",
+points:[
+"LMS 내 AI 기능 통합",
+"기관별 데이터 정책",
+"AI 활용과 관리 기능"
+],
+lesson:"데이터 통제 및 기관별 정책 대응 강화"
+},
+{
+name:"D2L Brightspace",
+product:"Lumi Remix · Learner Mode",
+points:[
+"콘텐츠 재구성 및 학습 지원",
+"기존 LMS 내 AI 기능 확장",
+"AI 기능 부가 과금"
+],
+lesson:"LMS 연동성과 콘텐츠 표준 대응 검토"
+},
+{
+name:"Moodle",
+product:"AI 모델 선택형 LMS",
+points:[
+"AI 모델 선택",
+"로컬 LLM 지원",
+"기관별 데이터 관리"
+],
+lesson:"데이터 주권 및 AI 모델 운영 유연성 검토"
+},
+{
+name:"Meritto",
+product:"교육기관 모집·입학 CRM",
+points:[
+"입학 및 모집 프로세스 관리",
+"WhatsApp 연계",
+"상담 자동화"
+],
+lesson:"동남아 교육기관의 영업·상담 채널 특성 반영"
+},
+{
+name:"Jamf",
+product:"Apple 기기 관리·보안",
+points:[
+"학교 기기 통제",
+"학생 보호 및 보안",
+"교육용 디바이스 관리"
+],
+lesson:"학교 IT 관리자 관점의 도입 요건 고려"
+}
+];
+
+document.getElementById("companyDetails").innerHTML=
+companies.map(c=>`
+<details class="detail">
+<summary>${c.name} <span style="color:#6b8daa;font-size:14px">· ${c.product}</span></summary>
+<div class="detail-body">
+<h4>주요 제품 및 현장 인사이트</h4>
+<ul>${c.points.map(p=>`<li>${p}</li>`).join("")}</ul>
+<h4>아이스크림미디어 시사점</h4>
+<p>${c.lesson}</p>
+</div>
+</details>`).join("");
+
+// 사진 및 영상 업로드 설정
+// GitHub assets 폴더에 업로드 후 아래 배열에 추가하세요.
 const PHOTOS=[
+ // "assets/booth01.jpg",
+ // "assets/team.jpg",
+ // "assets/demo.jpg"
 ];
 
-// 영상 추가 예시:
-// {title:"전시회 하이라이트",src:"assets/highlight.mp4"}
 const VIDEOS=[
+ // {title:"EDUtech Asia 하이라이트",src:"assets/highlight.mp4"},
+ // {title:"제품 시연",src:"assets/demo.mp4"}
 ];
 
-document.getElementById("photoGallery").innerHTML=
-PHOTOS.map(src=>`<a href="${src}" target="_blank">
-<img src="${src}" loading="lazy" alt="전시 현장"></a>`).join("");
-document.getElementById("videoGallery").innerHTML=
-VIDEOS.map(v=>`<div class="card">
-<h3>${v.title}</h3><video controls src="${v.src}"></video>
+const photoGallery=document.getElementById("photoGallery");
+photoGallery.innerHTML=PHOTOS.map(src=>`
+<a href="${src}" target="_blank">
+<img src="${src}" loading="lazy" alt="전시 현장 사진"></a>`).join("");
+if(PHOTOS.length)
+document.getElementById("photoEmpty").style.display="none";
+
+const videoGallery=document.getElementById("videoGallery");
+videoGallery.innerHTML=VIDEOS.map(v=>`
+<div class="card">
+<h3>${v.title}</h3>
+<video controls preload="metadata" src="${v.src}"></video>
 </div>`).join("");
-if(!PHOTOS.length)
-document.getElementById("photoHelp").textContent="사진 업로드 대기 중";
-if(!VIDEOS.length)
-document.getElementById("videoHelp").textContent="영상 업로드 대기 중";
+if(VIDEOS.length)
+document.getElementById("videoEmpty").style.display="none";
+
+// 제품별 Core 고객
+// 원본 명단을 확보한 후 고객명을 추가하세요.
+const CORE={
+coreKinder:[],
+coreLumi:[],
+coreTrue:[],
+coreArt:[]
+};
+Object.entries(CORE).forEach(([id,items])=>{
+document.getElementById(id).innerHTML=items.length
+? "<ul>"+items.map(x=>`<li>${x}</li>`).join("")+"</ul>"
+: '<p style="font-size:13px;color:#7990a6">상세 고객 명단 추가 예정</p>';
+});
 </script>
 </body>
 </html>
