@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EDUtech Asia 2026 | i-Scream media</title>
+<style>
+:root {
+  --bg:#071326; --panel:#11243c; --cyan:#67dce5;
+  --text:#f3f7ff; --muted:#b7c8db;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+header {
+  position:fixed; top:0; left:0; right:0; z-index:10;
+  padding:17px 5%; background:#071326ed;
+  border-bottom:1px solid #ffffff20;
+  display:flex; justify-content:space-between; align-items:center;
+}
+header strong { letter-spacing:.05em; }
+header small { color:var(--cyan); }
+button {
+  cursor:pointer; background:#173650; color:white;
+  border:1px solid #ffffff40; padding:10px 16px;
+  border-radius:9px;
+}
+.deck {
+  height:100vh; overflow-y:auto;
+  scroll-snap-type:y mandatory; scroll-behavior:smooth;
+}
+.slide {
+  min-height:100vh; height:100vh;
+  scroll-snap-align:start; overflow-y:auto;
+  padding:105px 7% 85px;
+  display:flex; flex-direction:column; justify-content:center;
+  gap:22px;
+  background:radial-gradient(circle at 85% 20%,#173957,transparent 45%);
+}
+.slide:nth-child(even) {
+  background:radial-gradient(circle at 15% 85%,#143a43,transparent 45%),#09182c;
+}
+.eyebrow {
+  color:var(--cyan); font-weight:bold; letter-spacing:2px;
+  font-size:13px;
+}
+h1 { font-size:clamp(52px,8vw,110px); line-height:1.04; margin:0; }
+h2 { font-size:clamp(30px,4.2vw,58px); margin:0; }
+h3 { color:var(--cyan); margin:0 0 13px; }
+p { color:var(--muted); line-height:1.7; margin:0; font-size:17px; }
+.accent { color:var(--cyan); }
+.grid { display:grid; gap:16px; }
+.four { grid-template-columns:repeat(4,1fr); }
+.three { grid-template-columns:repeat(3,1fr); }
+.two { grid-template-columns:repeat(2,1fr); }
+.card {
+  background:#ffffff0b; border:1px solid #ffffff24;
+  border-radius:18px; padding:24px;
+}
+.metric {
+  font-size:clamp(35px,4vw,65px);
+  color:var(--cyan); font-weight:800;
+}
+.label { color:var(--muted); margin-top:8px; }
+.pill {
+  display:inline-block; border:1px solid var(--cyan);
+  border-radius:30px; color:var(--cyan);
+  padding:9px 14px; margin:5px; font-size:13px;
+}
+.bar { display:flex; align-items:center; gap:12px; margin:13px 0; }
+.bar label { width:105px; font-size:14px; }
+.track { flex:1; height:17px; background:#ffffff20; border-radius:20px; overflow:hidden; }
+.fill { height:100%; background:linear-gradient(90deg,#38cbd6,#7d8bf6); }
+.bar b { width:35px; text-align:right; }
+.nav {
+  position:fixed; bottom:25px; right:25px; z-index:20;
+  display:flex; align-items:center; gap:9px;
+}
+.nav span { font-size:13px; color:var(--muted); }
+.gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; }
+.gallery img { width:100%; border-radius:12px; cursor:pointer; }
+.video-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+video { width:100%; border-radius:12px; }
+.modal {
+  position:fixed; inset:0; z-index:30;
+  background:#000e; display:none;
+  align-items:center; justify-content:center; padding:30px;
+}
+.modal img { max-width:95%; max-height:90vh; object-fit:contain; }
+.note { color:#91a9c2; font-size:14px; }
+@media(max-width:800px) {
+  .four,.three,.two { grid-template-columns:1fr 1fr; }
+  .slide { padding:90px 5% 85px; justify-content:flex-start; }
+  .gallery { grid-template-columns:repeat(2,1fr); }
+  .card { padding:16px; }
+}
+@media(max-width:520px) {
+  .four,.three,.two,.video-grid { grid-template-columns:1fr; }
+  header small { display:none; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <strong>i-Scream media <small>GLOBAL BUSINESS</small></strong>
+  <small>EDUtech Asia 2026</small>
+</header>
+
+<main class="deck" id="deck">
+
+<section class="slide">
+  <div class="eyebrow">GLOBAL EXHIBITION REPORT · NOVEMBER 2026</div>
+  <h1>EDUtech<br><span class="accent">Asia 2026</span></h1>
+  <p>전시회 참가 결과 보고서</p>
+  <p>Singapore Sands Expo · November 4–5, 2026</p>
+  <div>
+    <span class="pill">Lead Performance</span>
+    <span class="pill">Market Intelligence</span>
+    <span class="pill">Singapore Meetings</span>
+  </div>
+  <p>아이스크림미디어 해외사업실</p>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">01 / EXHIBITION PERFORMANCE</div>
+  <h2>전시회 핵심 성과</h2>
+  <div class="grid four">
+    <div class="card"><div class="metric">572</div><div class="label">고유 연락처</div></div>
+    <div class="card"><div class="metric">414</div><div class="label">기관 수</div></div>
+    <div class="card"><div class="metric">24</div><div class="label">해외 국가</div></div>
+    <div class="card"><div class="metric">94%</div><div class="label">배지 스캔 비중</div></div>
+  </div>
+  <p>사전 23건 · 11월 4일 268건 · 11월 5일 281건</p>
+  <p>전시 제품: Kinderboard · LumiTeach · ART BONBON · TRUETRUE</p>
+  <p>운영 인력: 총 7명</p>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">02 / LEAD ANALYTICS</div>
+  <h2>국가별 리드 분석</h2>
+  <div class="grid two">
+    <div class="card" id="countryChart"></div>
+    <div class="card">
+      <h3>동남아 시장 집중</h3>
+      <div class="metric">88%</div>
+      <p>해외 리드 중 동남아 비중</p>
+      <hr style="border-color:#ffffff20">
+      <p>싱가포르 243건 · 말레이시아 124건</p>
+      <p>두 국가가 해외 리드의 약 68% 차지</p>
+      <p>인도네시아·필리핀은 확장 후보 시장</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">03 / LEAD QUALITY</div>
+  <h2>산업별 리드 구성</h2>
+  <div class="grid two">
+    <div class="card" id="industryChart"></div>
+    <div class="card">
+      <h3>우선 영업 대상</h3>
+      <div class="metric">141명</div>
+      <p>의사결정 직군</p>
+      <br>
+      <div class="metric">127건</div>
+      <p>에듀테크·유통 파트너 후보</p>
+      <br>
+      <p>K-12 학교 및 유아교육 기관 158건</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">04 / MARKET INTELLIGENCE</div>
+  <h2>3대 Key Takeaways</h2>
+  <div class="grid three">
+    <div class="card">
+      <h3>01 · AI Learning Journey</h3>
+      <p>교사가 직접 AI 기능을 체험하고 수업에 적용하는 온보딩 중심 접근</p>
+    </div>
+    <div class="card">
+      <h3>02 · Human-AI Literacy</h3>
+      <p>Think → Create → Reflect</p>
+      <p>AI 활용 과정에서 비판적 사고와 학습자 주도성을 강조</p>
+    </div>
+    <div class="card">
+      <h3>03 · Teacher Experience</h3>
+      <p>체험 → 미션·배지 → 앰배서더 → 1:1 연수</p>
+      <p>교사의 실제 수업 정착을 지원</p>
+    </div>
+  </div>
+  <p>핵심 시사점: 단순 AI 기능보다 교육과정 정렬, 교사 경험, 현장 적용이 중요</p>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">05 / COMPETITOR ANALYSIS</div>
+  <h2>주요 경쟁사 벤치마킹</h2>
+  <div class="grid three">
+    <div class="card"><h3>Google for Education</h3><p>Gemini 기반 체험형 교사 온보딩 및 AI 연수</p></div>
+    <div class="card"><h3>LEXGO Academy</h3><p>Think-Create-Reflect 기반 AI 리터러시 수업 도구</p></div>
+    <div class="card"><h3>MagicSchool AI</h3><p>개별 교사 무료 체험에서 학교·교육청 계약으로 전환</p></div>
+    <div class="card"><h3>Toddle</h3><p>IB 교육과정 특화 LMS 및 1:1 교사 연수</p></div>
+    <div class="card"><h3>Canvas · D2L</h3><p>AI 상위 요금제 및 기관별 데이터 통제 정책</p></div>
+    <div class="card"><h3>Moodle</h3><p>AI 모델 선택 및 로컬 LLM 지원</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">06 / SINGAPORE BUSINESS MEETINGS</div>
+  <h2>주요 기관 미팅 결과</h2>
+  <div class="grid two">
+    <div class="card">
+      <h3>ECDA</h3>
+      <p>유치원 운영사가 구매 결정</p>
+      <p>IMDA 승인 및 정부 지원금 연계 검토</p>
+      <p>5개 Anchor Operator 직접 공략 권고</p>
+    </div>
+    <div class="card">
+      <h3>Skool4Kidz</h3>
+      <p>TRUETRUE 구매 관심</p>
+      <p>MOQ 100대 및 워런티 조건 문의</p>
+      <p>Kinderboard 확장 가능성 확인</p>
+    </div>
+    <div class="card">
+      <h3>Kinderland</h3>
+      <p>TRUETRUE 샘플 전달</p>
+      <p>단일 센터 시범 운영 후 그룹 확산 검토</p>
+    </div>
+    <div class="card">
+      <h3>Hanbridge Institute</h3>
+      <p>LumiTeach 자체 교재 기반 PoC 추진</p>
+      <p>ART BONBON 부가 프로그램 검토</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">07 / ACTION PLAN</div>
+  <h2>후속 실행 계획</h2>
+  <div class="grid three">
+    <div class="card">
+      <h3>11월 · 리드 관리</h3>
+      <p>HubSpot 리드 등록</p>
+      <p>Thank-you 메일 발송</p>
+      <p>제품별 Core 고객 후속 접촉</p>
+    </div>
+    <div class="card">
+      <h3>12월 · 성과 분석</h3>
+      <p>메일 회신율 측정</p>
+      <p>SQL 전환율 분석</p>
+      <p>리드 등급 및 기관 정보 보완</p>
+    </div>
+    <div class="card">
+      <h3>기관별 영업 추진</h3>
+      <p>Skool4Kidz 공급 조건 제안</p>
+      <p>Kinderland 시범 운영 검토</p>
+      <p>Hanbridge PoC 일정 확정</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">08 / EXHIBITION GALLERY</div>
+  <h2>전시 현장 스케치</h2>
+  <p>GitHub에 assets 폴더를 만들고 사진을 추가하면 자동으로 표시됩니다.</p>
+  <div class="gallery" id="gallery"></div>
+  <p class="note" id="galleryNote"></p>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">09 / VIDEO SHOWCASE</div>
+  <h2>현장 영상</h2>
+  <p>영상 파일을 추가하면 이 화면에서 바로 재생할 수 있습니다.</p>
+  <div class="video-grid" id="videos"></div>
+  <p class="note" id="videoNote"></p>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">THANK YOU</div>
+  <h1>Thank <span class="accent">You.</span></h1>
+  <p>EDUtech Asia 2026</p>
+  <p>i-Scream media · Global Business</p>
+</section>
+
+</main>
+
+<div class="nav">
+  <button onclick="move(-1)">↑</button>
+  <button onclick="move(1)">↓</button>
+  <span id="counter">1 / 10</span>
+</div>
+
+<div class="modal" id="modal" onclick="this.style.display='none'">
+  <img id="zoom" alt="현장 사진 확대">
+</div>
+
+<script>
+// 국가별 리드
+const countryData = [
+  ["싱가포르",243],["말레이시아",124],
+  ["인도네시아",43],["필리핀",39],
+  ["인도",17],["베트남",13],
+  ["홍콩",10],["중국",9],["태국",8]
+];
+
+// 산업별 리드
+const industryData = [
+  ["K-12 학교",132],["에듀테크",94],
+  ["대학",67],["정부·공공",53],
+  ["유통·컨설팅",33],["유아교육",26]
+];
+
+function drawBars(id,data) {
+  const max=Math.max(...data.map(x=>x[1]));
+  document.getElementById(id).innerHTML=data.map(([name,value])=>`
+    <div class="bar">
+      <label>${name}</label>
+      <div class="track">
+        <div class="fill" style="width:${value/max*100}%"></div>
+      </div>
+      <b>${value}</b>
+    </div>
+  `).join("");
+}
+drawBars("countryChart",countryData);
+drawBars("industryChart",industryData);
+
+// 사진 경로: GitHub assets 폴더에 업로드
+const PHOTOS = [
+  // "assets/booth1.jpg",
+  // "assets/booth2.jpg",
+  // "assets/team.jpg"
+];
+
+// 영상 경로
+const VIDEOS = [
+  // {title:"전시회 하이라이트",src:"assets/highlight.mp4"},
+  // {title:"제품 시연",src:"assets/demo.mp4"}
+];
+
+const gallery=document.getElementById("gallery");
+gallery.innerHTML=PHOTOS.map(src=>`
+  <img src="${src}" loading="lazy" alt="전시 현장"
+    onclick="document.getElementById('zoom').src=this.src;
+    document.getElementById('modal').style.display='flex'">
+`).join("");
+if(!PHOTOS.length) {
+  document.getElementById("galleryNote").textContent=
+    "사진 추가 대기 중 · PHOTOS 배열에 파일 경로를 입력하세요.";
+}
+
+const videoBox=document.getElementById("videos");
+videoBox.innerHTML=VIDEOS.map(v=>`
+  <div class="card">
+    <h3>${v.title}</h3>
+    <video controls preload="metadata" src="${v.src}"></video>
+  </div>
+`).join("");
+if(!VIDEOS.length) {
+  document.getElementById("videoNote").textContent=
+    "영상 추가 대기 중 · VIDEOS 배열에 파일 경로를 입력하세요.";
+}
+
+// 슬라이드 이동
+const deck=document.getElementById("deck");
+const slides=[...document.querySelectorAll(".slide")];
+const counter=document.getElementById("counter");
+let active=0;
+
+function move(direction) {
+  active=Math.max(0,Math.min(slides.length-1,active+direction));
+  slides[active].scrollIntoView({behavior:"smooth"});
+  counter.textContent=`${active+1} / ${slides.length}`;
+}
+
+deck.addEventListener("scroll",()=>{
+  const index=Math.round(deck.scrollTop/deck.clientHeight);
+  active=Math.max(0,Math.min(slides.length-1,index));
+  counter.textContent=`${active+1} / ${slides.length}`;
+});
+
+document.addEventListener("keydown",e=>{
+  if(["ArrowDown","PageDown","ArrowUp","PageUp"].includes(e.key)) {
+    e.preventDefault();
+    move(["ArrowDown","PageDown"].includes(e.key)?1:-1);
+  }
+  if(e.key==="Escape") {
+    document.getElementById("modal").style.display="none";
+  }
+});
+</script>
+</body>
+</html>
